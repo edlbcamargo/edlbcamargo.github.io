@@ -1,8 +1,10 @@
 /*
- * Components CSS - v5 - 2016-07-08
+ * Components CSS - v7 - 2020-09-30
  * https://www.myresponsee.com
- * Copyright 2018, Vision Design - graphic zoo
+ * Copyright 2020, Vision Design - graphic zoo
  * Free to use under the MIT license.
+ * 
+ * Components CSS includes Tabs, Custom forms, Tooltips, Buttons, Timelines, Modals, Accordions
 */
 /* Tabs */
 .tab-item {
@@ -164,7 +166,10 @@ a.tooltip-content.tooltip-bottom,.tooltip-content.tooltip-bottom {
 .button.rounded-full-btn {
   border-radius: 100px;
 }
-.button:hover {box-shadow: 0 0 10px 100px rgba(255,255,255,0.15) inset;}
+.button:hover {
+  box-shadow: 0 0 10px 100px rgba(255,255,255,0.15) inset;
+  color: #fff;
+}
 .button.secondary-btn,a.button.secondary-btn,a.button.secondary-btn:link,a.button.secondary-btn:active,a.button.secondary-btn:visited {
   background: #444 none repeat scroll 0 0;
 }
@@ -199,4 +204,272 @@ a.tooltip-content.tooltip-bottom,.tooltip-content.tooltip-bottom {
 }
 .button:hover > i {
   background: rgba(0, 0, 0, 0.06) none repeat scroll 0 0;
+}
+.grid .button {
+  width: 100%;
+}
+/* Accordion */
+.accordion-title { 
+  font-size: 1.1rem;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 5px 0;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  color: #152732;
+  background: #eee;
+}
+.accordion-content {
+  display: none;
+  padding: 15px;
+  border: 1px solid #eee;
+}
+.accordion-title::before {
+  content: "\f005";
+  font-family: "mfg";
+  margin-right: 10px;
+  font-size: 12px;
+  width: 17px;
+  height: 17px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 17px;
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  top: -1px;
+  border: 2px solid #fff;
+  transform: rotate(0deg);
+  transition:all 0.2s ease-in-out;
+  -moz-transition:all 0.2s ease-in-out;
+  -webkit-transition:all 0.2s ease-in-out;
+}
+.active-accordion-section > .accordion-title::before {
+  transform: rotate(180deg);
+}
+/* Modal */
+.modal {
+  display: none;
+  margin-top: -100%;    
+  background: #fff;
+  padding: 20px;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  transition:all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+}
+.modal.active-modal {
+  margin-top: 0;
+  width: 100%;
+}
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  clear: left;
+  overflow-x: hidden;
+  height: 100%;
+  overflow-y: auto;
+}
+.modal-content::after {
+  clear:both;
+  content: ".";
+  display:block;
+  height:0;
+  line-height:0;
+  overflow:hidden;
+  visibility:hidden;
+}
+.modal-wrap {
+  background: rgba(0,0,0,0.6);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;  
+  z-index: 1000;
+}
+body.modal-active {
+  overflow: hidden !important;
+}
+.modal-close-button, .modal-button  {
+  cursor: pointer;
+}
+.modal-close {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.modal-close-icon i {
+  color: #ccc;
+  font-size: 17px;
+}
+.modal-close-icon {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  cursor: pointer;
+}
+/* Timeline */
+.timeline-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0;
+}
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 100%;
+  width: 4px;
+  background: #eeeeee;
+}
+@media only screen and (min-width: 1170px) {
+  .timeline-container::before {
+    left: 50%;
+    margin-left: -2px;
+  }
+}
+.timeline-block {
+  position: relative;
+  margin: 2rem 0;
+  clear: both;
+}
+.timeline-block:after {
+  clear:both;
+  content: ".";
+  display:block;
+  height:0;
+  line-height:0;
+  overflow:hidden;
+  visibility:hidden;
+}
+.timeline-block:first-child {
+  margin-top: 0;
+}
+.timeline-block:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 1170px) {
+  .timeline-block {
+    margin: 4em 0;
+  }
+  .timeline-block:first-child {
+    margin-top: 0;
+  }
+  .timeline-block:last-child {
+    margin-bottom: 0;
+  }
+}
+.timeline-icon {
+  background: #B4BF04;	
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+}
+.timeline-icon i {
+  color: #fff;
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1141px) {
+  .timeline-icon {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
+    line-height: 60px;
+  }
+  .timeline-icon i {
+    font-size: 2rem;
+  }
+}
+.timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background: #f5f5f5;
+  border-radius: 0.25rem;
+  padding: 1em;
+  text-align: left;
+}
+.timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.timeline-content .timeline-date {
+  display: inline-block;
+  float: left;
+  font-size: 1.5rem;
+  color: #333;
+}
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 11px solid transparent;
+  border-right: 11px solid #f5f5f5;
+}
+.timeline-icon img {
+  top: 0px;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
+}
+.timeline-icon {
+  overflow: hidden;
+}
+@media only screen and (min-width: 1141px) {
+  .timeline-content {
+    margin-left: 0;
+    padding: 15px;
+    width: 45%;
+    text-align: right;
+  }
+  .timeline-content .timeline-date {
+    position: absolute;
+    width: 100%;
+    left: 121%;
+    top: 0;
+    text-align: left;
+  }
+  .timeline-content::before {
+    left: 100%;
+    border-left: 11px solid #f5f5f5;
+    border-right: 0;
+  }
+  .timeline-block:nth-child(even) .timeline-content {
+    float: right;
+    text-align: left;
+  }
+  .timeline-block:nth-child(even) .timeline-content::before {
+    top: 24px;
+    left: auto;
+    right: 100%;
+    border-color: transparent;   
+    border-right: 11px solid #f5f5f5;
+  }
+  .timeline-block:nth-child(even) .timeline-content .timeline-date {
+    left: auto;
+    right: 121%;
+    text-align: right;
+  } 
 }
