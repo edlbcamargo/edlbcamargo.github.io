@@ -3,3 +3,10 @@
     width: 100%;
     display: none;
 }
+
+.tabela {
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    padding: 0 0;
+}
